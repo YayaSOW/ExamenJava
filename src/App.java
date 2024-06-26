@@ -179,11 +179,11 @@ public class App {
                     if (chambre == null) {
                         System.out.println("Ce numero n'existe pas !!!");
                     } else {
-                        // System.out.println(chambre);
+                        System.out.println(chambre);
                         // List<Loge> etudiantsDansChambre = chambreService.getEtudiantsParChambre(chambre);
                         // for (Loge etudiant : etudiantsDansChambre) {
                         //     System.out.println(etudiant);
-                        }
+                        // }
                         // for (Etudiant etudiant : etudiantService.show()) {
                         // if (etudiantService.getEtudiantsLoges()) {
                         // System.out.println(chambre);
