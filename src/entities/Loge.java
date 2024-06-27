@@ -4,12 +4,12 @@ import java.time.LocalDate;
 
 import enums.TypeBourse;
 
-public class Loge extends Etudiant {
+public class Loge extends Boursier {
     //Attribut navigable
     //ManyToOne (Loge => Chambre)
     private Chambre chambre;
     public Loge(String nom, String prenom, String email, String tel, LocalDate dateNaissance, TypeBourse typeBourse, Chambre chambre) {
-        super();
+        super(nom, prenom, email, tel, dateNaissance,typeBourse);
         this.chambre=chambre;
     }
     public Loge() {
@@ -25,7 +25,7 @@ public class Loge extends Etudiant {
 
     @Override
     public String toString() {
-        return "Loge [chambre=" + chambre + ", toString()=" + super.toString() + "]";
+        return "Loge [chambre=" + chambre + " " + super.toString() + "]";
     }
     
 }

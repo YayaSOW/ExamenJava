@@ -19,7 +19,7 @@ public class ChambreView extends ViewImp<Chambre> {
         do {
             System.out.println("Veuillez choisir le Type de la chambre :");
             System.out.println("1-INDIVIDUEL");
-            System.out.println("2-PLUSIEURS");
+            System.out.println("2-DEUX");
             System.out.print("Votre Choix : ");
             try {
                 choix = scanner.nextInt();

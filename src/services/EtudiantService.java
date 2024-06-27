@@ -3,13 +3,13 @@ package services;
 import java.util.ArrayList;
 import java.util.List;
 
-import core.Service;
+import core.ServiceImpEtudiant;
 import entities.Boursier;
 import entities.Etudiant;
 import entities.Loge;
 import entities.NonBoursier;
 
-public class EtudiantService implements Service<Etudiant> {
+public class EtudiantService implements ServiceImpEtudiant {
     List<Etudiant> etudiants = new ArrayList<>();
 
     @Override
@@ -40,6 +40,7 @@ public class EtudiantService implements Service<Etudiant> {
         return etudiants.size();
     }
 
+    @Override
        // Méthode pour récupérer tous les boursiers
     public List<Boursier> getBoursiers() {
         List<Boursier> boursiers = new ArrayList<>();
@@ -51,6 +52,7 @@ public class EtudiantService implements Service<Etudiant> {
         return boursiers;
     }
 
+    @Override
     // Méthode pour récupérer tous les étudiants logés
     public List<Loge> getEtudiantsLoges() {
         List<Loge> loges = new ArrayList<>();
@@ -62,6 +64,19 @@ public class EtudiantService implements Service<Etudiant> {
         return loges;
     }
 
+    @Override
+    // Méthode pour récupérer tous les étudiants Non logés et qui doivent etre logé
+    public List<Loge> getEtudiantsNonLoges() {
+        List<Loge> loges = new ArrayList<>();
+        for (Etudiant etudiant : etudiants) {
+            if (etudiant instanceof Loge && ((Loge)etudiant).getChambre() == null) {
+                loges.add((Loge) etudiant);
+            }
+        }
+        return loges;
+    }
+
+    @Override
     // Méthode pour récupérer tous les étudiants non boursiers
     public List<NonBoursier> getNonBoursiers() {
         List<NonBoursier> nonBoursiers = new ArrayList<>();

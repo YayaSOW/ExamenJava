@@ -6,7 +6,7 @@ public class NonBoursier extends Etudiant {
     private String adresse;
 
     public NonBoursier(String nom, String prenom, String email, String tel, LocalDate dateNaissance, String adresse) {
-        super();
+        super(nom, prenom, email, tel, dateNaissance);
         this.adresse = adresse;
     }
 
@@ -23,6 +23,6 @@ public class NonBoursier extends Etudiant {
 
     @Override
     public String toString() {
-        return "NonBoursier [adresse=" + adresse + ", toString()=" + super.toString() + "]";
+        return "NonBoursier [adresse=" + adresse + ", l'etudiant=" + super.toString() + "]";
     }
 }

@@ -3,11 +3,11 @@ package services;
 import java.util.ArrayList;
 import java.util.List;
 
-import core.Service;
+import core.ServiceImpChambre;
 import entities.Chambre;
 import entities.Loge;
 
-public class ChambreService implements Service<Chambre> {
+public class ChambreService implements ServiceImpChambre {
     List<Chambre> chambres = new ArrayList<>();
 
     @Override
@@ -39,6 +39,7 @@ public class ChambreService implements Service<Chambre> {
     }
 
     // Méthode pour récupérer tous les étudiants logés dans une chambre spécifique
+    @Override
     public List<Loge> getEtudiantsParChambre(Chambre chambre) {
         if (chambre != null) {
             return chambre.getLoges();

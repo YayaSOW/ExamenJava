@@ -10,7 +10,7 @@ public class Boursier extends Etudiant {
     private TypeBourse typeBourse;  
     
     public Boursier(String nom, String prenom, String email, String tel, LocalDate dateNaissance, TypeBourse typeBourse) {
-        super();
+        super(nom, prenom, email, tel, dateNaissance);
         this.typeBourse = typeBourse;
     }
     public Boursier() {
@@ -25,6 +25,6 @@ public class Boursier extends Etudiant {
     }
     @Override
     public String toString() {
-        return "Boursier [typeBourse=" + typeBourse + "]";
+        return "Boursier [typeBourse=" + typeBourse + ", l'etudiant=" + super.toString() +"]";
     }
 }

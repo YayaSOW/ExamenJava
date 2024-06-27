@@ -1,7 +1,7 @@
 package views;
 
 import java.time.LocalDate;
-import java.util.List;
+import java.time.format.DateTimeParseException;
 
 import core.Service;
 import entities.Boursier;
@@ -34,8 +34,7 @@ public class EtudiantView extends ViewImp<Etudiant> {
         String email = scanner.nextLine();
         System.out.println("Entrer le tel de l'etudiant");
         String tel = scanner.nextLine();
-        System.out.println("Entrer la date de naissance [dd-mm-yyyy] ?");
-        LocalDate dateNaissance  = formatDate(scanner.nextLine());
+        LocalDate dateNaissance  = saisiDate();
         int rep = typeEtudiant();
         if (rep == 1) {
             TypeBourse typeBourse = typeBourse();
